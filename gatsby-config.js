@@ -11,13 +11,13 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
-      name: `Kevin Tran`,
-      summary: `who lives and works in Orange County, CA, building useful things.`,
+      name: `Kyle Mathews`,
+      summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `nivekt24`,
+      twitter: `kylemathews`,
     },
   },
   plugins: [

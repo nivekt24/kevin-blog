@@ -1,16 +1,24 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyles, lightTheme, darkTheme } from "styles/GlobalStyles"
+// Components
+import Header from "../Header"
+// Styles
+import { GlobalStyles, darkTheme, lightTheme } from "../../styles/GlobalStyles"
 
 const Layout = ({ children }) => {
-  const data = useMetaDataQuery()
-  const [darkMode] = useContext(ModeContext)
-
   return (
-    <ThemeProvider theme={darkTheme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
+    <div className="global-wrapper">
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyles />
+        <Header />
+        {children}
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
+      </ThemeProvider>
+    </div>
   )
 }
 

@@ -1,14 +1,18 @@
-import React from "react"
+import React, { useContext } from "react"
 import { ThemeProvider } from "styled-components"
 // Components
 import Header from "../Header"
+// Context
+import { ModeContext } from "../context/ModeProvider"
 // Styles
 import { GlobalStyles, darkTheme, lightTheme } from "../../styles/GlobalStyles"
 
 const Layout = ({ children }) => {
+  const [darkMode] = useContext(ModeContext)
+
   return (
     <div className="global-wrapper">
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header />
         {children}

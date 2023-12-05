@@ -5,13 +5,15 @@ import { Nav } from "./Menu.styles"
 
 const Menu = ({ items }) => (
   <Nav>
-    {items.map(item => (
-      <li key={item.id}>
-        <Link to={item.link} activeClassName="active">
-          {item.name}
-        </Link>
-      </li>
-    ))}
+    <li>
+      <Link to="/">Home</Link>
+    </li>
+    <li>
+      <Link to="/">About</Link>
+    </li>
+    <li>
+      <Link to="/">Projects</Link>
+    </li>
   </Nav>
 )
 

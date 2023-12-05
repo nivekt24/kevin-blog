@@ -1,21 +1,21 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-// Components
+import React, { useState, useContext } from "react"
 
+// Components
 import Menu from "../Menu"
-// Hooks
-import { useSiteConfigQuery } from "../hooks/useSiteConfigQuery"
+import ModeButton from "../ModeButton"
+
+// Context
+import { ModeContext } from "../context/ModeProvider"
 // Styles
 import { Wrapper, Logo } from "./Header.styles"
 
 const Header = () => {
-  const siteConfig = useSiteConfigQuery()
+  const [darkMode, setDarkMode] = useContext(ModeContext)
 
   return (
     <Wrapper>
-      <Menu items={siteConfig.menu} />
-      <Link to="/"></Link>
-      <div>Theme Button</div>
+      <Menu />
+      <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
     </Wrapper>
   )
 }

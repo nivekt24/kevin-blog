@@ -4,7 +4,7 @@ import MuliBlack from "../fonts/Muli-Regular.woff"
 
 export const colors = {
   white: "#fff",
-  darkGrey: "#1a1c20",
+  darkGrey: "#161927",
   deepDarkGrey: "#404040",
   blueShade1: "#215973",
   blueShade2: "#6fadc6",

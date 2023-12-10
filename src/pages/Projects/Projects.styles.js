@@ -1,17 +1,7 @@
 import styled from "styled-components"
 
-// .portfolio {
-//     text-align: center;
-//   }
-//   .portfolio > h2 {
-
-//   }
-//   .portfolio > h3 {
-
-//   }
-
 export const Portfolio = styled.div`
-  align-items: center;
+  text-align: center;
 
   h2 {
     font-size: 3em;
@@ -21,5 +11,21 @@ export const Portfolio = styled.div`
   h3 {
     font-size: 2em;
     font-weight: 400;
+  }
+`
+export const Work = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  margin: 40px 10px;
+
+  h3 {
+    text-align: center;
+    margin: 10px auto 0px;
+    font-weight: 500;
+  }
+
+  p {
+    margin-top: 4px;
   }
 `

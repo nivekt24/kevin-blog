@@ -74,6 +74,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   p {
+    color: ${props => props.theme.colors.textSecondary};
     font-size: 0.9rem;
     line-height: 1.2;
 

@@ -19,6 +19,7 @@ module.exports = {
     social: {
       twitter: `ktrandev`,
     },
+    contact: `kevinntrann@gmail.com`,
   },
   plugins: [
     `gatsby-plugin-image`,

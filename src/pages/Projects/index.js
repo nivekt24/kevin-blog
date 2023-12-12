@@ -4,24 +4,35 @@ import React from "react"
 import Layout from "../../components/Layout/index"
 // Styles
 import { Portfolio, Work } from "./Projects.styles"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Projects({ data }) {
   console.log(data)
   const projects = data.allMarkdownRemark.nodes
+  const contact = data.site.siteMetadata.contact
 
   return (
     <Layout>
       <Portfolio>
-        <h2>Projects</h2>
+        <h2>Portfolio</h2>
         <h3>Projects & Websites I've Created</h3>
         <Work>
           {projects?.map(project => (
             <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
-              <h3>{project.frontmatter.title}</h3>
-              <p>{project.frontmatter.stack}</p>
+              <div>
+                <GatsbyImage
+                  image={
+                    project.frontmatter.thumb.childImageSharp.gatsbyImageData
+                  }
+                />
+
+                <h3>{project.frontmatter.title}</h3>
+                <p>{project.frontmatter.stack}</p>
+              </div>
             </Link>
           ))}
         </Work>
+        <p>Like what you see? Email me at {contact} for a quote!</p>
       </Portfolio>
     </Layout>
   )
@@ -36,8 +47,18 @@ export const query = graphql`
           slug
           stack
           title
+          thumb {
+            childImageSharp {
+              gatsbyImageData(quality: 80, sizes: "")
+            }
+          }
         }
         id
+      }
+    }
+    site {
+      siteMetadata {
+        contact
       }
     }
   }

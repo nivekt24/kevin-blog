@@ -91,6 +91,11 @@ hr {
   border: 0;
 }
 
+/* Utilities */
+.text-align {
+  text-align: center;
+}
+
 /* Heading */
 
 h1,

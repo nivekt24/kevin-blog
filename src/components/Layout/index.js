@@ -11,12 +11,12 @@ const Layout = ({ children }) => {
   const [darkMode] = useContext(ModeContext)
 
   return (
-    <div className="global-wrapper">
+    <div class>
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header />
         {children}
-        <footer>
+        <footer className="text-align">
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>

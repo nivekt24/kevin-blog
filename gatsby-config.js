@@ -12,7 +12,7 @@ module.exports = {
     title: `Kevin's Blog`,
     author: {
       name: `Kevin Tran`,
-      summary: `who lives and works in Southern California building useful things.`,
+      summary: `who lives and works in Southern California building useful things as full-stack web developer`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,

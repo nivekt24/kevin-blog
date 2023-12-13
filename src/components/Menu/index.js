@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
+// Components
+import ModeButton from "../ModeButton"
+
+// Context
+import { ModeContext } from "../context/ModeProvider"
 // Styles
 import { Nav } from "./Menu.styles"
 
 const Menu = () => {
+  const [darkMode, setDarkMode] = useContext(ModeContext)
+
   return (
     <Nav>
       <li>
@@ -14,6 +21,10 @@ const Menu = () => {
       </li>
       <li>
         <Link to="/Projects">Projects</Link>
+      </li>
+      <li>
+        {" "}
+        <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
       </li>
     </Nav>
   )

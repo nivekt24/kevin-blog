@@ -1,21 +1,27 @@
-import React, { useState, useContext } from "react"
-
+import React from "react"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 // Components
 import Menu from "../Menu"
-import ModeButton from "../ModeButton"
-
-// Context
-import { ModeContext } from "../context/ModeProvider"
 // Styles
-import { Wrapper, Logo } from "./Header.styles"
+import { Wrapper } from "./Header.styles"
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useContext(ModeContext)
-
   return (
     <Wrapper>
+      <Link to="/">
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../../images/logo_main.png"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Profile picture"
+        />
+      </Link>
       <Menu />
-      <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
     </Wrapper>
   )
 }

@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   const [darkMode] = useContext(ModeContext)
 
   return (
-    <div class>
+    <div className="global-wrapper">
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header />

@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 export const Nav = styled.ul`
   /* display: none; */
+  display: flex;
+  align-items: center;
   list-style-type: none;
   padding: 0;
   font-family: "Muli Regular", Arial, Helvetica, sans-serif;
@@ -30,8 +32,8 @@ export const Nav = styled.ul`
       opacity: 0.7;
     }
   }
-
+  /* 
   @media screen and (min-width: 768px) {
     display: block;
-  }
+  } */
 `

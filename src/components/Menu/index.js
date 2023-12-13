@@ -13,9 +13,9 @@ const Menu = () => {
 
   return (
     <Nav>
-      <li>
+      {/* <li>
         <Link to="/">Home</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/About">About</Link>
       </li>

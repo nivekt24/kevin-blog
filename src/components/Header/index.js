@@ -11,7 +11,6 @@ const Header = () => {
     <Wrapper>
       <Link to="/">
         <StaticImage
-          className="bio-avatar"
           layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../../images/logo_main.png"

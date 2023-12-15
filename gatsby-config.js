@@ -17,6 +17,7 @@ module.exports = {
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
+      github: `nivekt24`,
       twitter: `ktrandev`,
     },
     contact: `kevinntrann@gmail.com`,

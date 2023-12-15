@@ -1,4 +1,6 @@
 import React from "react"
+// components
+import Social from "../social"
 // styles
 import { HeroSection } from "./Hero.styles"
 
@@ -12,6 +14,7 @@ const Hero = () => {
         I’m passionate about building interactive and innovative experience for
         the web and across all platforms.
       </p>
+      <Social />
     </HeroSection>
   )
 }

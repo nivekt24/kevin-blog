@@ -6,8 +6,13 @@ export const Nav = styled.ul`
   align-items: center;
   list-style-type: none;
   padding: 0;
-  font-family: "Muli Regular", Arial, Helvetica, sans-serif;
+  font-family: "DM Mono", monospace;
+  /* font-family: "Muli Regular", Arial, Helvetica, sans-serif; */
   font-size: 1rem;
+
+  h1 {
+    color: ${props => props.theme.colors.textDark};
+  }
 
   a {
     text-decoration: none;

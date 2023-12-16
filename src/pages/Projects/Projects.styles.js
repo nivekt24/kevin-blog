@@ -15,9 +15,14 @@ export const Portfolio = styled.div`
 `
 export const Work = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
-  margin: 40px 10px;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(300px, auto);
+  margin-right: auto;
+  width: 100%;
+  max-width: 1000px;
+  padding-top: 32px;
+  text-align: center;
 
   h3 {
     text-align: center;

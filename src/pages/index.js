@@ -30,6 +30,7 @@ const BlogIndex = ({ data, location }) => {
     <BlogLayout location={location} title={siteTitle}>
       <Hero />
       <ol style={{ listStyle: `none` }}>
+        <h1>Latest Posts</h1>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -72,7 +73,7 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />
+export const Head = () => <Seo title="Kevin Tran" />
 
 export const pageQuery = graphql`
   {

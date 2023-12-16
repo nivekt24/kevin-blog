@@ -15,7 +15,7 @@ export default function Projects({ data }) {
     <Layout>
       <Portfolio>
         <h2>Portfolio</h2>
-        <h3>Projects & Websites I've Created</h3>
+
         <Work>
           {projects?.map(project => (
             <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
@@ -49,7 +49,7 @@ export const query = graphql`
           title
           thumb {
             childImageSharp {
-              gatsbyImageData(quality: 80)
+              gatsbyImageData(quality: 80, placeholder: BLURRED)
             }
           }
         }

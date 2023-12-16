@@ -1,6 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
 // Components
 import IconGitHub from "./icons/github"
 import IconTwitter from "./icons/twitter"
@@ -43,12 +41,20 @@ const SocialList = styled.ul`
 const Social = () => (
   <SocialList>
     <li>
-      <a href="https://github.com/nivekt24" target="_blank">
+      <a
+        href="https://github.com/nivekt24"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <IconGitHub />
       </a>
     </li>
     <li>
-      <a href="https://twitter.com/ktrandev" target="_blank">
+      <a
+        href="https://twitter.com/ktrandev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <IconTwitter />
       </a>
     </li>

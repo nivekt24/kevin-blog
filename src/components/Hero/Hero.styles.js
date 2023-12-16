@@ -4,6 +4,7 @@ export const HeroSection = styled.div`
   padding: 6rem 0;
 
   h1 {
+    font-family: "DM Mono", monospace;
     font-size: 3em;
   }
 

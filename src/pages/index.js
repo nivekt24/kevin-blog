@@ -2,10 +2,11 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Hero from "../components/Hero"
+import Hero from "../components/hero"
 // import Layout from "../components/Layout/index"
 import BlogLayout from "../components/BlogLayout"
 import Seo from "../components/seo"
+import Featured from "../components/featured"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -62,6 +63,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <Featured />
     </BlogLayout>
   )
 }
@@ -85,6 +87,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "blog" } } }
       sort: { frontmatter: { date: DESC } }
+      limit: 3
     ) {
       nodes {
         excerpt

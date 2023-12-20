@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { ThemeProvider } from "styled-components"
 // Components
-import Header from "../Header"
+import Header from "../header"
 // Context
 import { ModeContext } from "../context/ModeProvider"
 // Styles

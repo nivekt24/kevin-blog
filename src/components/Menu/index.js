@@ -17,10 +17,10 @@ const Menu = () => {
         <Link to="/">Home</Link>
       </li> */}
       <li>
-        <Link to="/About">01. About</Link>
+        <Link to="/about">01. About</Link>
       </li>
       <li>
-        <Link to="/Projects">02. Projects</Link>
+        <Link to="/projects">02. Projects</Link>
       </li>
       <li>
         {" "}

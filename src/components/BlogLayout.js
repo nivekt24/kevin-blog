@@ -1,10 +1,9 @@
 import * as React from "react"
 import { useContext } from "react"
-import { Link } from "gatsby"
 
 import { ThemeProvider } from "styled-components"
 // Components
-import Header from "./Header"
+import Header from "./header"
 // Context
 import { ModeContext } from "./context/ModeProvider"
 // Styles

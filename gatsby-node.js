@@ -145,7 +145,3 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `)
 }
-
-// exports.createPages = async ({ graphql, actions }) => {
-
-// }

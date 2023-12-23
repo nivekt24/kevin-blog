@@ -6,6 +6,7 @@ export const NavList = styled.ul`
   align-items: center;
   list-style-type: none;
   padding: 0;
+  margin: 0;
   font-family: "DM Mono", monospace;
   /* font-family: "Muli Regular", Arial, Helvetica, sans-serif; */
   font-size: 1rem;

@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import { GatsbyImage } from "gatsby-plugin-image"
 

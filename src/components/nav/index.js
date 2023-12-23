@@ -6,13 +6,13 @@ import ModeButton from "../ModeButton"
 // Context
 import { ModeContext } from "../context/ModeProvider"
 // Styles
-import { Nav } from "./Menu.styles"
+import { NavList } from "./Nav.styles"
 
-const Menu = () => {
+const Nav = () => {
   const [darkMode, setDarkMode] = useContext(ModeContext)
 
   return (
-    <Nav>
+    <NavList>
       {/* <li>
         <Link to="/">Home</Link>
       </li> */}
@@ -26,7 +26,7 @@ const Menu = () => {
         {" "}
         <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
       </li>
-    </Nav>
+    </NavList>
   )
 }
-export default Menu
+export default Nav

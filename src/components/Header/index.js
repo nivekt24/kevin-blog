@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 // Components
-import Menu from "../Menu"
+import Nav from "../nav"
 // Styles
 import { Wrapper } from "./Header.styles"
 
@@ -20,7 +20,7 @@ const Header = () => {
           alt="Profile picture"
         />
       </Link>
-      <Menu />
+      <Nav />
     </Wrapper>
   )
 }

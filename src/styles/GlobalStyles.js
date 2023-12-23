@@ -70,7 +70,6 @@ export const GlobalStyles = createGlobalStyle`
   h2 {
     font-size: 1rem;
     letter-spacing: 1.8px;
-    text-transform: uppercase;
 
     @media screen and (min-width: 768px) {
       font-size: 1.5rem;

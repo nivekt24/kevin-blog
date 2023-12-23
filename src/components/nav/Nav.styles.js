@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Nav = styled.ul`
+export const NavList = styled.ul`
   /* display: none; */
   display: flex;
   align-items: center;

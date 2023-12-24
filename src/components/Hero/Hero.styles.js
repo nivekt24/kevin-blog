@@ -10,7 +10,7 @@ export const HeroSection = styled.div`
 
   p {
     /* text-align: center; */
-    font-size: 1.5em;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 20px;
     max-width: 40rem;

@@ -37,9 +37,9 @@ export const NavList = styled.ul`
     :hover {
       opacity: 0.7;
     }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
-  /* 
-  @media screen and (min-width: 768px) {
-    display: block;
-  } */
 `

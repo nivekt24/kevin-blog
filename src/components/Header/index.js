@@ -4,7 +4,20 @@ import { StaticImage } from "gatsby-plugin-image"
 // Components
 import Nav from "../nav"
 // Styles
-import { Wrapper } from "./Header.styles"
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  height: 70px;
+  margin: 20px auto;
+
+  @media screen and (min-width: 768px) {
+    height: 120px;
+  }
+`
 
 const Header = () => {
   return (

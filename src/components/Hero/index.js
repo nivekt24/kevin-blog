@@ -2,7 +2,24 @@ import React from "react"
 // components
 import Social from "../social"
 // styles
-import { HeroSection } from "./Hero.styles"
+import styled from "styled-components"
+
+const HeroSection = styled.div`
+  padding: 6rem 0;
+
+  h1 {
+    font-family: "DM Mono", monospace;
+    font-size: 3em;
+  }
+
+  p {
+    /* text-align: center; */
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    max-width: 40rem;
+  }
+`
 
 const Hero = () => {
   return (

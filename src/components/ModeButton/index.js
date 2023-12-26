@@ -3,7 +3,19 @@ import React from "react"
 import DayIcon from "../../images/daymode.svg"
 import NightIcon from "../../images/nightmode.svg"
 // Styles
-import { ImgButton } from "./ModeButton.styles"
+import styled from "styled-components"
+
+const ImgButton = styled.img`
+  display: flex;
+  align-self: flex-start;
+  width: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  :hover {
+    transform: scale(1.1);
+  }
+`
 
 const ModeButton = ({ darkMode, setDarkMode }) => (
   <ImgButton

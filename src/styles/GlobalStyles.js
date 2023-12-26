@@ -3,16 +3,18 @@ import { createGlobalStyle } from "styled-components"
 export const colors = {
   white: "#fff",
   lightGrey: "#d1e1e9",
-  darkGrey: "#161927",
   deepDarkGrey: "#404040",
   blueShade1: "#215973",
   blueShade2: "#435acb",
+  blueShade3: "#112240",
+  blueShade4: "#0a192f",
+  blueShade5: "#161927",
 }
 
 export const darkTheme = {
   colors: {
-    background: colors.darkGrey,
-    menuBackground: colors.blueShade1,
+    background: colors.blueShade5,
+    menuBackground: colors.blueShade4,
     textDark: colors.lightGrey,
     textMain: colors.blueShade2,
     textSecondary: colors.lightGrey,
@@ -22,7 +24,7 @@ export const darkTheme = {
 export const lightTheme = {
   colors: {
     background: colors.white,
-    menuBackground: colors.blueShade3,
+    menuBackground: colors.white,
     textDark: colors.blueShade1,
     textMain: colors.blueShade2,
     textSecondary: colors.deepDarkGrey,

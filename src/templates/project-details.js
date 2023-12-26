@@ -1,8 +1,31 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { Details, Featured, HTML } from "./ProjectDetails.styles"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+
+const Details = styled.div`
+  text-align: center;
+
+  h2 {
+    font-size: 3.5em;
+    margin-top: 80px;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+`
+
+const Featured = styled.div`
+  margin-bottom: 40px;
+`
+
+const HTML = styled.div`
+  margin-top: 40px;
+`
 
 const ProjectDetails = ({ data }) => {
   const { html } = data.markdownRemark

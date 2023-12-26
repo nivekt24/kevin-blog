@@ -133,7 +133,7 @@ const StyledSidebar = styled.aside`
     li {
       position: relative;
       margin: 0 auto 20px;
-      font-size: 1.125rem;
+      font-size: clamp(0.875rem, 4vw, 1.125rem);
 
       @media (max-width: 600px) {
         margin: 0 auto 10px;
@@ -144,7 +144,7 @@ const StyledSidebar = styled.aside`
         display: block;
         margin-bottom: 5px;
         color: green;
-        font-size: 1.125rem;
+        font-size: 0.875rem;
       }
     }
 

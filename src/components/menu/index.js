@@ -1,9 +1,10 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useRef } from "react"
 import { Link } from "gatsby"
+import { ModeContext } from "../context/ModeProvider"
+import useOnClickOutside from "../hooks/useOnClickOutside"
 import ModeButton from "../ModeButton"
 
-// Context
-import { ModeContext } from "../context/ModeProvider"
+// Styles
 import styled from "styled-components"
 
 const StyledMenu = styled.div`
@@ -162,35 +163,40 @@ const Menu = () => {
 
   const [darkMode, setDarkMode] = useContext(ModeContext)
 
+  const wrapperRef = useRef()
+  useOnClickOutside(wrapperRef, () => setMenuOpen(false))
+
   return (
     <StyledMenu>
-      <StyledHamburgerButton
-        onClick={toggleMenu}
-        menuOpen={menuOpen}
-        aria-label="Menu"
-      >
-        <div className="ham-box">
-          <div className="ham-box-inner" />
-        </div>
-      </StyledHamburgerButton>
+      <div ref={wrapperRef}>
+        <StyledHamburgerButton
+          onClick={toggleMenu}
+          menuOpen={menuOpen}
+          aria-label="Menu"
+        >
+          <div className="ham-box">
+            <div className="ham-box-inner" />
+          </div>
+        </StyledHamburgerButton>
 
-      <StyledSidebar
-        menuOpen={menuOpen}
-        aria-hidden={!menuOpen}
-        tabIndex={menuOpen ? 1 : -1}
-      >
-        <nav>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
-          </li>
-        </nav>
-      </StyledSidebar>
+        <StyledSidebar
+          menuOpen={menuOpen}
+          aria-hidden={!menuOpen}
+          tabIndex={menuOpen ? 1 : -1}
+        >
+          <nav>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/projects">Projects</Link>
+            </li>
+            <li>
+              <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
+            </li>
+          </nav>
+        </StyledSidebar>
+      </div>
     </StyledMenu>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react"
+import React, { useState, useEffect, useContext, useRef } from "react"
 import { Link } from "gatsby"
 import { ModeContext } from "../context/ModeProvider"
 import useOnClickOutside from "../hooks/useOnClickOutside"
@@ -111,7 +111,7 @@ const StyledSidebar = styled.aside`
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? "visible" : "hidden")};
-    transition: var(--transition);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   nav {
@@ -162,6 +162,20 @@ const Menu = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
   const [darkMode, setDarkMode] = useContext(ModeContext)
+
+  const onResize = e => {
+    if (e.currentTarget.innerWidth > 768) {
+      setMenuOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", onResize)
+
+    return () => {
+      window.removeEventListener("resize", onResize)
+    }
+  }, [])
 
   const wrapperRef = useRef()
   useOnClickOutside(wrapperRef, () => setMenuOpen(false))

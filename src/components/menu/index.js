@@ -156,7 +156,7 @@ const StyledSidebar = styled.aside`
   }
 `
 
-const Menu = () => {
+const Menu = ({ menuLinks }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
@@ -199,12 +199,17 @@ const Menu = () => {
           tabIndex={menuOpen ? 1 : -1}
         >
           <nav>
-            <li>
+            {/* <li>
               <Link to="/about">About</Link>
             </li>
             <li>
               <Link to="/projects">Projects</Link>
-            </li>
+            </li> */}
+            {menuLinks.map(link => (
+              <li key={link.name}>
+                <Link to={link.link}>{link.name}</Link>
+              </li>
+            ))}
             <li>
               <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
             </li>

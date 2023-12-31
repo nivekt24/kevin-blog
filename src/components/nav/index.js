@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 // Components
 import ModeButton from "../ModeButton"
 import Menu from "../menu"
@@ -56,23 +56,33 @@ const NavList = styled.ul`
 const Nav = () => {
   const [darkMode, setDarkMode] = useContext(ModeContext)
 
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+          }
+        }
+      }
+    }
+  `)
+  const menuLinks = data.site.siteMetadata.menuLinks
+
   return (
     <>
       <NavList>
-        {/* <li>
-        <Link to="/">Home</Link>
-      </li> */}
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/projects">Projects</Link>
-        </li>
+        {menuLinks.map(link => (
+          <li key={link.name}>
+            <Link to={link.link}>{link.name}</Link>
+          </li>
+        ))}
         <li>
           <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
         </li>
       </NavList>
-      <Menu />
+      <Menu menuLinks={menuLinks} />
     </>
   )
 }

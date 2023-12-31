@@ -20,6 +20,20 @@ module.exports = {
       github: `nivekt24`,
       twitter: `ktrandev`,
     },
+    menuLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "About",
+        link: "/about",
+      },
+      {
+        name: "Projects",
+        link: "/projects",
+      },
+    ],
     contact: `kevinntrann@gmail.com`,
   },
   plugins: [

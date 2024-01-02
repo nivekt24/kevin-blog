@@ -36,6 +36,31 @@ export const GlobalStyles = createGlobalStyle`
     --site-max-width: 1200px;
   }
 
+  html {
+    box-sizing: border-box;
+    width: 100%;
+    scroll-behavior: smooth;
+  }
+
+
+/* Scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #495670 #0a192f;
+  }
+  ::-webkit-scrollbar {
+    width: 0.875rem;
+  }
+
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #637777;
+    border: 0.1875rem solid #0f172a;
+    border-radius: 0.625rem;
+  }
 
 
   body {

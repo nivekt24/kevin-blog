@@ -48,10 +48,11 @@ html {
     scrollbar-width: thin;
     scrollbar-color: #495670 #0a192f;
   }
+  
   ::-webkit-scrollbar {
-    width: 1.125rem;
-  }
+    width: 0.875rem;
 
+  }
 
   ::-webkit-scrollbar-track {
     background: #0f172a;

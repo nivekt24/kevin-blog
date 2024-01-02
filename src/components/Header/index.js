@@ -10,12 +10,20 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 960px;
-  height: 70px;
-  margin: 20px auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  padding: 0 1.5rem;
+  background: ${props => props.theme.colors.menuBackground};
+  color: ${props => props.theme.colors.textSecondary};
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 
   @media screen and (min-width: 768px) {
-    height: 120px;
+    padding: 0 2.5rem;
   }
 `
 
@@ -27,8 +35,8 @@ const Header = () => {
           layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../../images/logo_main.png"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
           quality={95}
           alt="Profile picture"
         />

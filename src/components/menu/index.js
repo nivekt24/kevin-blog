@@ -94,7 +94,7 @@ const StyledSidebar = styled.aside`
   display: none;
 
   @media (max-width: 768px) {
-    background: ${props => props.theme.colors.menuBackground};
+    background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.textSecondary};
     display: flex;
     justify-content: center;

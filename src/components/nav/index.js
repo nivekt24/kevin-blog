@@ -10,7 +10,6 @@ import { ModeContext } from "../context/ModeProvider"
 import styled from "styled-components"
 
 const NavList = styled.ul`
-  /* display: none; */
   display: flex;
   align-items: center;
   list-style-type: none;

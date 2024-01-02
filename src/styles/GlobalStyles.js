@@ -9,12 +9,14 @@ export const colors = {
   blueShade3: "#112240",
   blueShade4: "#0a192f",
   blueShade5: "#161927",
+  blueTransparent: "rgba(22, 25, 39, 0.85)",
+  whiteTransparent: "rgb(255,255,255, 0.85)",
 }
 
 export const darkTheme = {
   colors: {
     background: colors.blueShade5,
-    menuBackground: colors.blueShade4,
+    menuBackground: colors.blueTransparent,
     textDark: colors.lightGrey,
     textMain: colors.blueShade2,
     textSecondary: colors.lightGrey,
@@ -24,7 +26,7 @@ export const darkTheme = {
 export const lightTheme = {
   colors: {
     background: colors.white,
-    menuBackground: colors.white,
+    menuBackground: colors.whiteTransparent,
     textDark: colors.blueShade1,
     textMain: colors.blueShade2,
     textSecondary: colors.deepDarkGrey,

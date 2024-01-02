@@ -49,7 +49,7 @@ html {
     scrollbar-color: #495670 #0a192f;
   }
   ::-webkit-scrollbar {
-    width: 0.875rem;
+    width: 1.125rem;
   }
 
 

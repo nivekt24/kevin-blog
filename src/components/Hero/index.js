@@ -5,7 +5,7 @@ import Social from "../social"
 import styled from "styled-components"
 
 const HeroSection = styled.div`
-  padding: 6rem 0;
+  padding: 96px 0;
 
   h1 {
     font-family: "DM Mono", monospace;

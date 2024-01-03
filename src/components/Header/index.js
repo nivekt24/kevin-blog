@@ -16,14 +16,14 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100px;
   z-index: 10;
-  padding: 0 1.5rem;
+  padding: 0 24px;
   background: ${props => props.theme.colors.menuBackground};
   color: ${props => props.theme.colors.textSecondary};
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 
   @media screen and (min-width: 768px) {
-    padding: 0 2.5rem;
+    padding: 0 40px;
   }
 `
 

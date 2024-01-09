@@ -5,6 +5,7 @@ import Social from "../social"
 import styled from "styled-components"
 
 const HeroSection = styled.div`
+  max-width: 40rem;
   padding: 96px 0;
 
   h1 {
@@ -13,11 +14,9 @@ const HeroSection = styled.div`
   }
 
   p {
-    /* text-align: center; */
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 20px;
-    max-width: 40rem;
   }
 `
 

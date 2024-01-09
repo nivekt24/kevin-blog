@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { ThemeProvider } from "styled-components"
 // Components
 import Header from "../header"
+import Footer from "../footer"
 // Context
 import { ModeContext } from "../context/ModeProvider"
 // Styles
@@ -15,12 +16,10 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header />
-        {children}
-        <footer className="text-align">
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <div id="content">
+          {children}
+          <Footer />
+        </div>
       </ThemeProvider>
     </div>
   )

@@ -72,7 +72,10 @@ html {
     margin: 0;
     padding: 0 20px 80px 20px;
     transition: all 0.5s ease;
+    overflow: auto; /* Show scrollbar by default */
   }
+
+
 
   .overflow-hidden {
     overflow: hidden;

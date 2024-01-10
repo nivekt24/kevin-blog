@@ -161,9 +161,7 @@ const Menu = ({ menuLinks }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
-
     // Toggle body class to hide/show scrollbar
-    document.body.classList.toggle("overflow-hidden", !menuOpen)
   }
   const [darkMode, setDarkMode] = useContext(ModeContext)
 
@@ -180,6 +178,17 @@ const Menu = ({ menuLinks }) => {
       window.removeEventListener("resize", onResize)
     }
   }, [])
+
+  useEffect(() => {
+    //the menu state changes (open or closed)
+    if (menuOpen) {
+      // if open remove scrollbar on body
+      document.body.classList.add("overflow-hidden")
+    } else {
+      // else remove overflow-hidden class to allow scrolling
+      document.body.classList.remove("overflow-hidden")
+    }
+  }, [menuOpen])
 
   const wrapperRef = useRef()
   useOnClickOutside(wrapperRef, () => setMenuOpen(false))

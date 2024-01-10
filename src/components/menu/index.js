@@ -159,8 +159,12 @@ const StyledSidebar = styled.aside`
 const Menu = ({ menuLinks }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
 
+    // Toggle body class to hide/show scrollbar
+    document.body.classList.toggle("overflow-hidden", !menuOpen)
+  }
   const [darkMode, setDarkMode] = useContext(ModeContext)
 
   const onResize = e => {

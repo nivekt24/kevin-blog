@@ -74,6 +74,10 @@ html {
     transition: all 0.5s ease;
   }
 
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
   main {
     max-width: 960px;
     margin: 40px auto;

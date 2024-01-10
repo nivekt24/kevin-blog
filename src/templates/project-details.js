@@ -23,7 +23,7 @@ const Featured = styled.div`
   margin-bottom: 40px;
 `
 
-const HTML = styled.div`
+const Html = styled.div`
   margin-top: 40px;
 `
 
@@ -42,7 +42,7 @@ const ProjectDetails = ({ data }) => {
             alt="Projects"
           />
         </Featured>
-        <HTML dangerouslySetInnerHTML={{ __html: html }} />
+        <Html dangerouslySetInnerHTML={{ __html: html }} />
       </Details>
     </Layout>
   )

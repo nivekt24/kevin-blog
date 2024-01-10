@@ -159,10 +159,8 @@ const StyledSidebar = styled.aside`
 const Menu = ({ menuLinks }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
-    // Toggle body class to hide/show scrollbar
-  }
+  const toggleMenu = () => setMenuOpen(!menuOpen)
+
   const [darkMode, setDarkMode] = useContext(ModeContext)
 
   const onResize = e => {
@@ -180,14 +178,8 @@ const Menu = ({ menuLinks }) => {
   }, [])
 
   useEffect(() => {
-    //the menu state changes (open or closed)
-    if (menuOpen) {
-      // if open remove scrollbar on body
-      document.body.classList.add("overflow-hidden")
-    } else {
-      // else remove overflow-hidden class to allow scrolling
-      document.body.classList.remove("overflow-hidden")
-    }
+    // Toggle body class to hide/show scrollbar based on menuOpen
+    document.body.classList.toggle("overflow-hidden", menuOpen)
   }, [menuOpen])
 
   const wrapperRef = useRef()
@@ -212,12 +204,6 @@ const Menu = ({ menuLinks }) => {
           tabIndex={menuOpen ? 1 : -1}
         >
           <nav>
-            {/* <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/projects">Projects</Link>
-            </li> */}
             {menuLinks.map(link => (
               <li key={link.name}>
                 <Link to={link.link}>{link.name}</Link>

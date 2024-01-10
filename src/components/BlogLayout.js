@@ -4,6 +4,7 @@ import { useContext } from "react"
 import { ThemeProvider } from "styled-components"
 // Components
 import Header from "./header"
+import Footer from "../components/footer"
 // Context
 import { ModeContext } from "./context/ModeProvider"
 // Styles
@@ -35,12 +36,10 @@ const BlogLayout = ({ location, title, children }) => {
         <GlobalStyles />
         <Header />
         <header className="global-header">{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <main>
+          {children}
+          <Footer />
+        </main>
       </ThemeProvider>
     </div>
   )

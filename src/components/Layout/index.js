@@ -16,10 +16,10 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header />
-        <div id="content">
+        <main>
           {children}
           <Footer />
-        </div>
+        </main>
       </ThemeProvider>
     </div>
   )

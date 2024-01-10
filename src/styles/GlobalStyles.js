@@ -77,6 +77,7 @@ html {
   main {
     max-width: 960px;
     margin: 40px auto;
+    padding-top: 40px;
   }
 
   h1, h2, h3, h4, h5, h6 {

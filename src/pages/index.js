@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
     <BlogLayout location={location} title={siteTitle}>
       <Hero />
       <ol style={{ listStyle: `none` }}>
-        <h1>Latest Posts</h1>
+        <h2 className="text-base uppercase letter-spacing-2">Latest Posts</h2>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -43,11 +43,11 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 <header>
-                  <h2>
+                  <h3>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
-                  </h2>
+                  </h3>
                   <small>{post.frontmatter.date}</small>
                 </header>
                 <section>

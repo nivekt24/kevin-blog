@@ -95,11 +95,10 @@ html {
 
   p {
     color: ${props => props.theme.colors.textSecondary};
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.2;
 
     @media screen and (min-width: 768px) {
-      font-size: 1.1rem;
       line-height: 1.5;
     }
   }

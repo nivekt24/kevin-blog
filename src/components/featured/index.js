@@ -9,8 +9,9 @@ export const FeaturedList = styled.div`
   padding: 6rem 0;
 
   h2 {
-    font-size: 2em;
-    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 `
 const Project = styled.div`
@@ -62,7 +63,7 @@ export default function Featured() {
 
   return (
     <FeaturedList>
-      <h1>Featured Projects</h1>
+      <h2>Featured Projects</h2>
 
       <Project>
         {featuredProjects?.map(project => (

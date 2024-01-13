@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
     <BlogLayout location={location} title={siteTitle}>
       <Hero />
       <ol style={{ listStyle: `none` }}>
-        <h2 className="text-base uppercase letter-spacing-2">Latest Posts</h2>
+        <h2 className="text-base uppercase letter-spacing-4">Latest Posts</h2>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 

@@ -11,7 +11,7 @@ export const FeaturedList = styled.div`
   h2 {
     font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
   }
 `
 const Project = styled.div`
@@ -73,6 +73,7 @@ export default function Featured() {
                 image={
                   project.frontmatter.thumb.childImageSharp.gatsbyImageData
                 }
+                alt=""
               />
 
               <h3>{project.frontmatter.title}</h3>

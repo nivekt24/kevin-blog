@@ -52,11 +52,11 @@ const StyledHamburgerButton = styled.button`
     background-color: #64ffda;
     transition-duration: 0.22s;
     transition-property: transform;
-    transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-    transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+    transition-delay: ${props => (props.$menuOpen ? `0.12s` : `0s`)};
+    transform: rotate(${props => (props.$menuOpen ? `225deg` : `0deg`)});
     transition-timing-function: cubic-bezier(
       ${props =>
-        props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`}
+        props.$menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`}
     );
     &:before,
     &:after {
@@ -74,18 +74,18 @@ const StyledHamburgerButton = styled.button`
       transition-property: transform;
     }
     &:before {
-      width: ${props => (props.menuOpen ? `100%` : `120%`)};
-      top: ${props => (props.menuOpen ? `0` : `-10px`)};
-      opacity: ${props => (props.menuOpen ? 0 : 1)};
-      transition: ${({ menuOpen }) =>
-        menuOpen
+      width: ${props => (props.$menuOpen ? `100%` : `120%`)};
+      top: ${props => (props.$menuOpen ? `0` : `-10px`)};
+      opacity: ${props => (props.$menuOpen ? 0 : 1)};
+      transition: ${({ $menuOpen }) =>
+        $menuOpen
           ? "top 0.1s ease-out, opacity 0.1s ease-out 0.12s;"
           : "top 0.1s ease-in 0.25s, opacity 0.1s ease-in"};
     }
     &:after {
-      width: ${props => (props.menuOpen ? `100%` : `80%`)};
-      bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-      transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
+      width: ${props => (props.$menuOpen ? `100%` : `80%`)};
+      bottom: ${props => (props.$menuOpen ? `0` : `-10px`)};
+      transform: rotate(${props => (props.$menuOpen ? `-90deg` : `0`)});
     }
   }
 `
@@ -109,8 +109,8 @@ const StyledSidebar = styled.aside`
     outline: 0;
     box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
     z-index: 9;
-    transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
-    visibility: ${props => (props.menuOpen ? "visible" : "hidden")};
+    transform: translateX(${props => (props.$menuOpen ? 0 : 100)}vw);
+    visibility: ${props => (props.$menuOpen ? "visible" : "hidden")};
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
@@ -190,7 +190,7 @@ const Menu = ({ menuLinks }) => {
       <div ref={wrapperRef}>
         <StyledHamburgerButton
           onClick={toggleMenu}
-          menuOpen={menuOpen}
+          $menuOpen={menuOpen}
           aria-label="Menu"
         >
           <div className="ham-box">
@@ -199,14 +199,16 @@ const Menu = ({ menuLinks }) => {
         </StyledHamburgerButton>
 
         <StyledSidebar
-          menuOpen={menuOpen}
+          $menuOpen={menuOpen}
           aria-hidden={!menuOpen}
           tabIndex={menuOpen ? 1 : -1}
         >
           <nav>
             {menuLinks.map(link => (
               <li key={link.name}>
-                <Link to={link.link}>{link.name}</Link>
+                <Link to={link.link} onClick={() => setMenuOpen(false)}>
+                  {link.name}
+                </Link>
               </li>
             ))}
             <li>

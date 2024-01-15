@@ -59,6 +59,7 @@ export default function Projects({ data }) {
                   image={
                     project.frontmatter.thumb.childImageSharp.gatsbyImageData
                   }
+                  alt=""
                 />
 
                 <h3>{project.frontmatter.title}</h3>

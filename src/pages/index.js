@@ -6,7 +6,10 @@ import Hero from "../components/hero"
 // import Layout from "../components/Layout/index"
 import BlogLayout from "../components/BlogLayout"
 import Seo from "../components/seo"
+import { Heading } from "../components/heading"
+import { Title } from "../components/title"
 import Featured from "../components/featured"
+import { Button } from "../components/button"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -31,7 +34,11 @@ const BlogIndex = ({ data, location }) => {
     <BlogLayout location={location} title={siteTitle}>
       <Hero />
       <ol style={{ listStyle: `none` }}>
-        <h2 className="text-base uppercase letter-spacing-4">Latest Posts</h2>
+        {/* <h2 className="text-base uppercase letter-spacing-4">Latest Posts</h2> */}
+        <Heading>
+          <Title>Latest Posts</Title>
+          <Button>See all Posts</Button>
+        </Heading>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -63,7 +70,12 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
-      <Featured />
+      <Featured>
+        <Heading>
+          <Title>Featured Projects</Title>
+          <Button>See all projects</Button>
+        </Heading>
+      </Featured>
     </BlogLayout>
   )
 }

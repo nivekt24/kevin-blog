@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import styled from "styled-components"
@@ -36,7 +35,7 @@ const Project = styled.div`
   }
 `
 
-export default function Featured() {
+export default function Featured({ children }) {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -63,7 +62,8 @@ export default function Featured() {
 
   return (
     <FeaturedList>
-      <h2>Featured Projects</h2>
+      {/* <h2>Featured Projects</h2> */}
+      {children}
 
       <Project>
         {featuredProjects?.map(project => (

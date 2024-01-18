@@ -9,7 +9,8 @@ import Seo from "../components/seo"
 import { Heading } from "../components/heading"
 import { Title } from "../components/title"
 import Featured from "../components/featured"
-import { Button } from "../components/button"
+import { LinkButton } from "../components/button"
+import IconRightArrow from "../components/icons/rightarrow"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -37,7 +38,12 @@ const BlogIndex = ({ data, location }) => {
         {/* <h2 className="text-base uppercase letter-spacing-4">Latest Posts</h2> */}
         <Heading>
           <Title>Latest Posts</Title>
-          <Button>See all Posts</Button>
+          <LinkButton>
+            <Link>
+              See all posts
+              <IconRightArrow />
+            </Link>
+          </LinkButton>
         </Heading>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -73,7 +79,11 @@ const BlogIndex = ({ data, location }) => {
       <Featured>
         <Heading>
           <Title>Featured Projects</Title>
-          <Button>See all projects</Button>
+          <LinkButton>
+            <Link style={{ position: "relative" }} to="/projects">
+              See all projects <IconRightArrow />
+            </Link>
+          </LinkButton>
         </Heading>
       </Featured>
     </BlogLayout>

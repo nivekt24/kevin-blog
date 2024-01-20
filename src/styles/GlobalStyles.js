@@ -126,4 +126,25 @@ html {
     color: ${props => props.theme.colors.textSecondary};
     text-decoration: none;
   }
+
+  .link-button > .right-arrow {
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 0.3s cubic-bezier(0.73, 0.26, 0.42, 1.24);
+  }
+
+  .link-button:hover > .right-arrow {
+    transform: translate3d(6px, 0px, 0px);
+    transition: transform 0.3s cubic-bezier(0.73, 0.26, 0.42, 1.24);
+  }
+
+  .right-arrow {
+  position: absolute;
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-left: 0.5rem;
+  }
+
+  .right-arrow path {
+    fill: ${props => props.theme.colors.textSecondary};
+  }
 `

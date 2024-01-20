@@ -39,7 +39,7 @@ const BlogIndex = ({ data, location }) => {
         <Heading>
           <Title>Latest Posts</Title>
           <LinkButton>
-            <Link to="/">
+            <Link to="/" className="link-button">
               See all posts
               <IconRightArrow />
             </Link>
@@ -80,7 +80,7 @@ const BlogIndex = ({ data, location }) => {
         <Heading>
           <Title>Featured Projects</Title>
           <LinkButton>
-            <Link style={{ position: "relative" }} to="/projects">
+            <Link to="/projects" className="link-button">
               See all projects <IconRightArrow />
             </Link>
           </LinkButton>

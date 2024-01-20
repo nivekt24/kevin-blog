@@ -1,9 +1,6 @@
 import React from "react"
-// Components
-import IconGitHub from "./icons/github"
-import IconTwitter from "./icons/twitter"
-// Styles
 import styled from "styled-components"
+import { IconGitHub, IconTwitter } from "./icons"
 
 const SocialList = styled.ul`
   display: flex;
@@ -41,20 +38,12 @@ const SocialList = styled.ul`
 const Social = () => (
   <SocialList>
     <li>
-      <a
-        href="https://github.com/nivekt24"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://github.com/nivekt24" target="_blank" rel="noreferrer">
         <IconGitHub />
       </a>
     </li>
     <li>
-      <a
-        href="https://twitter.com/ktrandev"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://twitter.com/ktrandev" target="_blank" rel="noreferrer">
         <IconTwitter />
       </a>
     </li>

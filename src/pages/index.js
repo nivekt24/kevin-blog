@@ -39,7 +39,7 @@ const BlogIndex = ({ data, location }) => {
         <Heading>
           <Title>Latest Posts</Title>
           <LinkButton>
-            <Link>
+            <Link to="/">
               See all posts
               <IconRightArrow />
             </Link>

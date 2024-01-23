@@ -11,7 +11,7 @@ import { ModeContext } from "./context/ModeProvider"
 import { GlobalStyles, darkTheme, lightTheme } from "../styles/GlobalStyles"
 
 const BlogLayout = ({ location, title, children }) => {
-  const [darkMode] = useContext(ModeContext)
+  const [lightMode] = useContext(ModeContext)
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -32,7 +32,7 @@ const BlogLayout = ({ location, title, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <ThemeProvider theme={lightMode ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Header />
         <header className="global-header">{header}</header>

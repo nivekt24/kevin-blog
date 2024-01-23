@@ -161,7 +161,7 @@ const Menu = ({ menuLinks }) => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
 
-  const [darkMode, setDarkMode] = useContext(ModeContext)
+  const [lightMode, setLightMode] = useContext(ModeContext)
 
   const onResize = e => {
     if (e.currentTarget.innerWidth > 768) {
@@ -212,7 +212,7 @@ const Menu = ({ menuLinks }) => {
               </li>
             ))}
             <li>
-              <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
+              <ModeButton lightMode={lightMode} setLightMode={setLightMode} />
             </li>
           </nav>
         </StyledSidebar>

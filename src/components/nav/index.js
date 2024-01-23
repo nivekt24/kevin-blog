@@ -53,7 +53,7 @@ const NavList = styled.ul`
 `
 
 const Nav = () => {
-  const [darkMode, setDarkMode] = useContext(ModeContext)
+  const [lightMode, setLightMode] = useContext(ModeContext)
 
   const data = useStaticQuery(graphql`
     query {
@@ -78,7 +78,7 @@ const Nav = () => {
           </li>
         ))}
         <li>
-          <ModeButton darkMode={darkMode} setDarkMode={setDarkMode} />
+          <ModeButton lightMode={lightMode} setLightMode={setLightMode} />
         </li>
       </NavList>
       <Menu menuLinks={menuLinks} />

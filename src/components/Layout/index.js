@@ -9,11 +9,11 @@ import { ModeContext } from "../context/ModeProvider"
 import { GlobalStyles, darkTheme, lightTheme } from "../../styles/GlobalStyles"
 
 const Layout = ({ children }) => {
-  const [darkMode] = useContext(ModeContext)
+  const [lightMode] = useContext(ModeContext)
 
   return (
     <div className="global-wrapper">
-      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <ThemeProvider theme={lightMode ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Header />
         <main>

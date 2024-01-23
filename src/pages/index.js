@@ -81,7 +81,8 @@ const BlogIndex = ({ data, location }) => {
           <Title>Featured Projects</Title>
           <LinkButton>
             <Link to="/projects" className="link-button">
-              See all projects <IconRightArrow />
+              <span>See all projects</span>
+              <IconRightArrow />
             </Link>
           </LinkButton>
         </Heading>

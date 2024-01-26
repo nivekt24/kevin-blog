@@ -26,12 +26,16 @@ module.exports = {
         link: "/",
       },
       {
-        name: "About",
-        link: "/about",
+        name: "Posts",
+        link: "/posts",
       },
       {
         name: "Projects",
         link: "/projects",
+      },
+      {
+        name: "About",
+        link: "/about",
       },
     ],
     contact: `kevinntrann@gmail.com`,

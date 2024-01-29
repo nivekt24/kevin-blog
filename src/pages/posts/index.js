@@ -13,6 +13,10 @@ const CardGridStyle = styled.div`
     margin-left: -32px;
     margin-right: -32px;
   }
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export default function Posts() {
@@ -38,7 +42,7 @@ export default function Posts() {
 
   return (
     <Layout>
-      <h1>Writing</h1>
+      <h2>Writing</h2>
       <CardGridStyle>
         {allPosts?.map(post => (
           <Card key={post.fields.slug}>

@@ -42,9 +42,7 @@ const Work = styled.div`
 `
 
 export default function Projects({ data }) {
-  // console.log(data)
   const projects = data.allMarkdownRemark.nodes
-  const contact = data.site.siteMetadata.contact
 
   return (
     <Layout>
@@ -68,7 +66,6 @@ export default function Projects({ data }) {
             </Link>
           ))}
         </Work>
-        <p>Like what you see? Email me at {contact} for a quote!</p>
       </Portfolio>
     </Layout>
   )
@@ -90,11 +87,6 @@ export const query = graphql`
           }
         }
         id
-      }
-    }
-    site {
-      siteMetadata {
-        contact
       }
     }
   }

@@ -70,7 +70,6 @@ html {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.textSecondary};
     margin: 0;
-    padding: 0 20px;
     transition: all 0.5s ease;
   }
 

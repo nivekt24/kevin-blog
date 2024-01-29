@@ -6,6 +6,11 @@ const CardWrapper = styled.div`
   padding: 32px;
   border-radius: 8px;
   transition: background 350ms ease 0s;
+
+  @media (max-width: 500px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `
 
 function Card({ children }) {

@@ -187,7 +187,7 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
 }
 
 h1 {
@@ -236,7 +236,7 @@ p {
   line-height: var(--lineHeight-relaxed);
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
   padding: var(--spacing-0);
 }
 
@@ -334,13 +334,16 @@ a:focus {
   margin-top: var(--spacing-8);
 }
 
+section:hover h3 {
+  color: var(--color-primary);
+}
+
 .post-list-item p {
-  margin-bottom: var(--spacing-0);
+  /* margin-bottom: var(--spacing-0); */
 }
 
 .post-list-item h3 {
   font-size: var(--fontSize-3);
-  color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
 }

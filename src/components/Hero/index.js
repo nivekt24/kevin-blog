@@ -9,6 +9,7 @@ const HeroSection = styled.div`
   padding: 96px 0;
 
   h1 {
+    color: ${props => props.theme.colors.textMain};
     font-family: "DM Mono", monospace;
     font-size: 3em;
   }

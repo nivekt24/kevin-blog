@@ -2,10 +2,14 @@ import React from "react"
 import styled from "styled-components"
 
 const CardWrapper = styled.div`
-  background: hsl(210deg, 30%, 8%);
+  background: ${props => props.theme.colors.cardBackground};
   padding: 32px;
   border-radius: 8px;
-  transition: background 350ms ease 0s;
+  transition: color 350ms ease 0s;
+
+  & section:hover h3 {
+    color: var(--color-primary);
+  }
 
   @media (max-width: 500px) {
     padding-left: 16px;

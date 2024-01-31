@@ -47,21 +47,22 @@ export default function Posts() {
         {allPosts?.map(post => (
           <Card key={post.fields.slug}>
             <article className="post-list-item">
-              <header>
-                <h3>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{post.frontmatter.title}</span>
-                  </Link>
-                </h3>
-                <small>{post.frontmatter.date}</small>
-              </header>
               <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: post.frontmatter.description || post.excerpt,
-                  }}
-                  itemProp="description"
-                />
+                <Link to={post.fields.slug} itemProp="url">
+                  <header>
+                    <h3>
+                      <span itemProp="headline">{post.frontmatter.title}</span>
+                    </h3>
+                    {/* <small>{post.frontmatter.date}</small> */}
+                  </header>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                  <span style={{ fontWeight: "bold" }}>Read more</span>
+                </Link>
               </section>
             </article>
           </Card>

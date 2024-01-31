@@ -2,24 +2,26 @@ import { createGlobalStyle } from "styled-components"
 
 export const colors = {
   white: "#fff",
-  lightGrey: "#d1e1e9",
+  lightGrey: "#f5f5f5",
   deepDarkGrey: "#404040",
   blueShade1: "#215973",
   blueShade2: "#435acb",
   blueShade3: "#112240",
   blueShade4: "#0a192f",
   blueShade5: "#161927",
-  blueTransparent: "rgba(22, 25, 39, 0.85)",
+  blueTransparent1: "rgba(22, 25, 39, 0.85)",
+  blueTransparent2: "hsl(210deg, 30%, 8%)",
   whiteTransparent: "rgb(255,255,255, 0.85)",
 }
 
 export const darkTheme = {
   colors: {
     background: colors.blueShade5,
-    menuBackground: colors.blueTransparent,
+    menuBackground: colors.blueTransparent1,
+    cardBackground: colors.blueTransparent2,
     textDark: colors.lightGrey,
     textMain: colors.blueShade2,
-    textSecondary: colors.lightGrey,
+    textSecondary: colors.white,
   },
 }
 
@@ -27,6 +29,7 @@ export const lightTheme = {
   colors: {
     background: colors.white,
     menuBackground: colors.whiteTransparent,
+    cardBackground: colors.lightGrey,
     textDark: colors.blueShade1,
     textMain: colors.blueShade2,
     textSecondary: colors.deepDarkGrey,
@@ -86,7 +89,6 @@ html {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: ${props => props.theme.colors.textMain};
     /* font-family: "Muli Black", Arial, Helvetica, sans-serif; */
     transition: all 0.5s ease;
     letter-spacing: 1px;

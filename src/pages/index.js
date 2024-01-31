@@ -35,7 +35,6 @@ const BlogIndex = ({ data, location }) => {
     <BlogLayout location={location} title={siteTitle}>
       <Hero />
       <ol style={{ listStyle: `none` }}>
-        {/* <h2 className="text-base uppercase letter-spacing-4">Latest Posts</h2> */}
         <Heading>
           <Title>Latest Posts</Title>
           <LinkButton>
@@ -55,21 +54,22 @@ const BlogIndex = ({ data, location }) => {
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <header>
-                  <h3>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h3>
-                  <small>{post.frontmatter.date}</small>
-                </header>
                 <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
+                  <Link to={post.fields.slug} itemProp="url">
+                    <header>
+                      <h3>
+                        <span itemProp="headline">{title}</span>
+                      </h3>
+                      {/* <small>{post.frontmatter.date}</small> */}
+                    </header>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                    <span style={{ fontWeight: "bold" }}>Read more</span>
+                  </Link>
                 </section>
               </article>
             </li>

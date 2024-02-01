@@ -91,6 +91,14 @@ body {
   /* color: var(--color-text); */
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
 footer {
   padding: var(--spacing-6) var(--spacing-0);
 }
@@ -305,6 +313,11 @@ table thead tr th {
 a:hover,
 a:focus {
   text-decoration: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
 }
 
 /* Custom classes */

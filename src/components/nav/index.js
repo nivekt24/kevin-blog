@@ -30,7 +30,7 @@ const NavList = styled.ul`
 
   li {
     display: inline-block;
-    margin-right: 20px;
+    padding: 10px;
     transition: opacity 0.5s ease;
     cursor: pointer;
 

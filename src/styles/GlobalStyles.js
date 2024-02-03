@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 export const colors = {
   white: "#fff",
-  lightGrey: "#f5f5f5",
+  lightGrey: "#f3f3f3",
   deepDarkGrey: "#404040",
   blueShade1: "#215973",
   blueShade2: "#435acb",
@@ -39,6 +39,8 @@ export const lightTheme = {
 export const GlobalStyles = createGlobalStyle`
   :root {
     --site-max-width: 1200px;
+    --scrollbar-width: thin;
+    --scrollbar-color: #495670 #0a192f;
   }
 
   html {
@@ -48,20 +50,20 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-/* Scrollbar */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #495670 #0a192f;
+  /* Scrollbar Styles */
+  html {
+    scrollbar-width: var(--scrollbar-width);
+    scrollbar-color: var(--scrollbar-color);
   }
-  
+
   ::-webkit-scrollbar {
     width: 0.875rem;
-
   }
 
   ::-webkit-scrollbar-track {
     background: #0f172a;
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: #637777;
     border: 3px solid #0f172a;

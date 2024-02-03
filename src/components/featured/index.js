@@ -38,7 +38,7 @@ const Project = styled.div`
 export default function Featured({ children }) {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
+      featured: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/src/projects/" } }
       ) {
         nodes {
@@ -58,27 +58,22 @@ export default function Featured({ children }) {
     }
   `)
   console.log(data)
-  const featuredProjects = data.allMarkdownRemark.nodes
+  const featuredProjects = data.featured.nodes
 
   return (
     <FeaturedList>
-      {/* <h2>Featured Projects</h2> */}
       {children}
 
       <Project>
         {featuredProjects?.map(project => (
           <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
-            <div>
-              <GatsbyImage
-                image={
-                  project.frontmatter.thumb.childImageSharp.gatsbyImageData
-                }
-                alt=""
-              />
+            <GatsbyImage
+              image={project.frontmatter.thumb.childImageSharp.gatsbyImageData}
+              alt=""
+            />
 
-              <h3>{project.frontmatter.title}</h3>
-              <p>{project.frontmatter.stack}</p>
-            </div>
+            <h3>{project.frontmatter.title}</h3>
+            <p>{project.frontmatter.stack}</p>
           </Link>
         ))}
       </Project>

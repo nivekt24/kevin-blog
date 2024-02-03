@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   backdrop-filter: blur(8px);
 
   @media screen and (min-width: 768px) {
-    padding: 0 40px;
+    padding: 0 50px;
   }
 `
 
@@ -47,3 +47,15 @@ const Header = () => {
 }
 
 export default Header
+
+/*
+
+const NavWrapper = styled.div`
+  display: flex;
+  z-index: 1100;
+  backdrop-filter: blur(8px);
+  background: rgba(22, 25, 39, 0.85);
+  position: fixed;
+`
+
+*/

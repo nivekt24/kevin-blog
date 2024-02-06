@@ -1,13 +1,14 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Layout from "../../components/Layout/index"
-import styled from "styled-components"
 import Card from "../../components/card"
+import styled from "styled-components"
 
 const CardGridStyle = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 32px;
+  padding-top: 32px;
 
   @media (min-width: 1150px) {
     margin-left: -32px;
@@ -42,7 +43,8 @@ export default function Posts() {
 
   return (
     <Layout>
-      <h2>Writing</h2>
+      <h1>Writing</h1>
+
       <CardGridStyle>
         {allPosts?.map(post => (
           <Card key={post.fields.slug}>

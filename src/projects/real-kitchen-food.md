@@ -1,5 +1,7 @@
 ---
 title: Real Kitchen Food
+github: "https://github.com/nivekt24"
+external: ""
 stack: Gatsby & Shopify
 slug: real-kitchen-food
 type: projects

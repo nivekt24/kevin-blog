@@ -1,5 +1,7 @@
 ---
 title: Retro Gaming Zone
+github: "https://github.com/nivekt24"
+external: ""
 stack: Svelte & Firebase
 slug: retro-gaming-zone
 type: projects

@@ -1,5 +1,7 @@
 ---
 title: The Drum Stop
+github: "https://github.com/nivekt24"
+external: ""
 stack: Next.js
 slug: the-drum-stop
 type: projects

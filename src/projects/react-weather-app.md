@@ -1,5 +1,7 @@
 ---
 title: The React Weather App
+github: "https://github.com/nivekt24"
+external: ""
 stack: ReactJS, API integration, & CSS
 slug: the-react-weather-app
 type: projects

@@ -1,5 +1,7 @@
 ---
 title: Trainer Trainer
+github: "https://github.com/nivekt24"
+external: ""
 stack: Gatsby & Shopify
 slug: trainer-trainer
 type: projects

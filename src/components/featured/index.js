@@ -1,48 +1,62 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Icon from "../icons/Icon"
 
 import styled from "styled-components"
 
 const ProjectWrapper = styled.div`
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  grid-column-gap: 32px;
-  grid-row-gap: 32px;
   padding: 6rem 0;
+
+  & > * {
+    margin-bottom: 48px;
+  }
 `
 
 const ProjectItem = styled.div`
   display: flex;
+  flex-direction: row;
   position: relative;
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
   background: ${props => props.theme.colors.cardBackground};
   border-radius: 24px;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 48px;
+  padding: 32px;
   overflow: hidden;
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
-    grid-column-gap: 10px;
-    grid-row-gap: 50px; /* adjust as you like */
     align-items: stretch;
     padding: 20px 0 0 16px;
+  }
+
+  .project-content {
+    margin: 0 32px;
+
+    @media screen and (max-width: 767px) {
+      margin: 16px;
+    }
   }
 
   .project-label {
     display: flex;
     flex-direction: column;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+
+    & h3,
+    & p {
+      margin-top: 16px;
+    }
+  }
+
+  h3,
+  p {
+    background: ${props => props.theme.colors.cardBackground};
   }
 
   h3 {
-    background: ${props => props.theme.colors.cardBackground};
     margin-top: 0;
     margin-bottom: 0;
     font-size: 30px;
@@ -50,18 +64,14 @@ const ProjectItem = styled.div`
     line-height: 1.06667;
   }
 
-  p {
-    background: ${props => props.theme.colors.cardBackground};
-  }
-
-  .project-image-left {
-    width: 62%;
-    margin: auto 20px -48px -48px;
-  }
-
+  .project-image-left,
   .project-image-right {
     width: 62%;
     margin: auto -48px -48px 20px;
+
+    &.project-image-left {
+      margin: auto 20px -48px -48px;
+    }
   }
 
   .project-tech-list {
@@ -69,8 +79,8 @@ const ProjectItem = styled.div`
     flex-wrap: wrap;
     position: relative;
     z-index: 2;
-    margin: 25px 0px 10px;
     padding: 0px;
+    margin-bottom: 16px;
     list-style: none;
   }
 
@@ -79,8 +89,21 @@ const ProjectItem = styled.div`
     white-space: nowrap;
   }
 
-  .project-links svg {
+  .project-links a {
+    opacity: 0.7;
     padding: 10px;
+    margin-right: 10px; /* Adjust as needed */
+    transition: opacity 0.5s ease;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .project-links a svg {
+    width: 24px;
+    height: 24px;
   }
 `
 
@@ -100,6 +123,8 @@ export default function Featured({ children }) {
                 gatsbyImageData(quality: 80, placeholder: BLURRED)
               }
             }
+            external
+            github
           }
           id
         }
@@ -110,26 +135,6 @@ export default function Featured({ children }) {
   const featuredProjects = data.featured.nodes
 
   return (
-    /*
-    <FeaturedList>
-      {children}
-
-      <Project>
-        {featuredProjects?.map(project => (
-         
-            <GatsbyImage
-              image={project.frontmatter.thumb.childImageSharp.gatsbyImageData}
-              alt=""
-            />
-
-            <h3>{project.frontmatter.title}</h3>
-            <p>{project.frontmatter.stack}</p>
-          </Link>
-        ))}
-      </Project>
-    </FeaturedList>
-    */
-
     <ProjectWrapper>
       {children}
       {featuredProjects?.map(project => (
@@ -155,7 +160,29 @@ export default function Featured({ children }) {
               <li>Express</li>
               <li>Heroku</li>
             </ul>
-            <div className="project-links"></div>
+            <div className="project-links">
+              {
+                <a
+                  href={project.frontmatter.github}
+                  aria-label="GitHub Link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="GitHub" />
+                </a>
+              }
+              {
+                <a
+                  href={project.frontmatter.external}
+                  className="external"
+                  aria-label="External Link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="External" />
+                </a>
+              }
+            </div>
           </div>
         </ProjectItem>
       ))}

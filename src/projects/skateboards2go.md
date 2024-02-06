@@ -1,5 +1,7 @@
 ---
 title: Skateboards2Go
+github: "https://github.com/nivekt24"
+external: ""
 stack: Vue & Firebase
 slug: skateboards-to-go
 type: projects

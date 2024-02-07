@@ -8,10 +8,10 @@ import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const Portfolio = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+  grid-gap: 20px;
   width: 100%;
+  text-align: center;
   margin: 50px -20px;
 
   h2 {
@@ -34,7 +34,6 @@ const Portfolio = styled.div`
 
     @media screen and (max-width: 767px) {
       grid-template-columns: 50px 1fr auto;
-      grid-gap: 20px;
     }
   }
 
@@ -46,16 +45,19 @@ const Portfolio = styled.div`
   }
 
   .project-links {
-    margin-left: 60px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    @media screen and (max-width: 767px) {
-      margin: 0;
+  @media screen and (max-width: 767px) {
+    .project-detail-item {
+      grid-gap: 10px;
     }
   }
 
   .project-links a {
     opacity: 0.7;
-    padding: 10px;
+    padding: 0px 5px;
     transition: opacity 0.5s ease;
 
     &:hover,
@@ -65,8 +67,8 @@ const Portfolio = styled.div`
   }
 
   .project-links a svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 `
 // const Work = styled.div`
@@ -99,42 +101,38 @@ export default function Projects({ data }) {
       <h1>Projects</h1>
       <Portfolio>
         {projects?.map(project => (
-          <table>
-            <div className="project-detail-item">
-              <GatsbyImage
-                image={
-                  project.frontmatter.thumb.childImageSharp.gatsbyImageData
-                }
-                alt=""
-              />
-              <div class="project-title">{project.frontmatter.title}</div>
-              <div class="project-year hidden-mobile">
-                {project.frontmatter.stack}
-              </div>
-              <div className="project-links">
-                {
-                  <a
-                    href={project.frontmatter.external}
-                    aria-label="External Link"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <Icon name="External" />
-                  </a>
-                }
-                {
-                  <a
-                    href={project.frontmatter.github}
-                    aria-label="GitHub Link"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <Icon name="GitHub" />
-                  </a>
-                }
-              </div>
+          <div className="project-detail-item" key={project.id}>
+            <GatsbyImage
+              image={project.frontmatter.thumb.childImageSharp.gatsbyImageData}
+              alt=""
+            />
+            <div className="project-title">{project.frontmatter.title}</div>
+            <div className="project-year hidden-mobile">
+              {project.frontmatter.stack}
             </div>
-          </table>
+            <div className="project-links">
+              {
+                <a
+                  href={project.frontmatter.external}
+                  aria-label="External Link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="External" />
+                </a>
+              }
+              {
+                <a
+                  href={project.frontmatter.github}
+                  aria-label="GitHub Link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="GitHub" />
+                </a>
+              }
+            </div>
+          </div>
         ))}
         {/* <Work>
           {projects?.map(project => (

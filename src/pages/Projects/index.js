@@ -10,9 +10,9 @@ import { GatsbyImage } from "gatsby-plugin-image"
 const Portfolio = styled.div`
   display: grid;
   grid-gap: 20px;
-  width: 100%;
   text-align: center;
-  margin: 50px -20px;
+  width: calc(100% + 10px);
+  margin: 50px -5px;
 
   h2 {
     font-size: 3em;
@@ -71,27 +71,6 @@ const Portfolio = styled.div`
     height: 20px;
   }
 `
-// const Work = styled.div`
-//   display: grid;
-//   grid-gap: 20px;
-//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-//   grid-auto-rows: minmax(300px, auto);
-//   margin-right: auto;
-//   width: 100%;
-//   max-width: 1000px;
-//   padding-top: 32px;
-//   text-align: center;
-
-//   h3 {
-//     text-align: center;
-//     margin: 10px auto 0px;
-//     font-weight: 500;
-//   }
-
-//   p {
-//     margin-top: 4px;
-//   }
-// `
 
 export default function Projects({ data }) {
   const projects = data.featured.nodes
@@ -134,24 +113,6 @@ export default function Projects({ data }) {
             </div>
           </div>
         ))}
-        {/* <Work>
-          {projects?.map(project => (
-            <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
-              <div>
-                <GatsbyImage
-                  image={
-                    project.frontmatter.thumb.childImageSharp.gatsbyImageData
-                  }
-                  alt=""
-                />
-
-                <h3>{project.frontmatter.title}</h3>
-
-                <p>{project.frontmatter.stack}</p>
-              </div>
-            </Link>
-          ))}
-        </Work> */}
       </Portfolio>
     </Layout>
   )

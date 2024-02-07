@@ -25,12 +25,13 @@ const ProjectItem = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 32px;
+  word-wrap: break-word;
   overflow: hidden;
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
     align-items: stretch;
-    padding: 20px 0 0 16px;
+    padding: 20px 16px;
   }
 
   .project-content {
@@ -86,7 +87,7 @@ const ProjectItem = styled.div`
 
   .project-tech-list li {
     margin: 0px 20px 5px 0px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 
   .project-links a {
@@ -104,6 +105,14 @@ const ProjectItem = styled.div`
   .project-links a svg {
     width: 24px;
     height: 24px;
+  }
+`
+
+const ImageContainer = styled.div`
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    max-width: 350px; /* Set maximum width to 300px */
+    margin: 0 auto; /* Center horizontally */
   }
 `
 
@@ -140,10 +149,14 @@ export default function Featured({ children }) {
       {featuredProjects?.map(project => (
         <ProjectItem key={project.id}>
           <Link to={"/projects/" + project.frontmatter.slug} key={project.id}>
-            <GatsbyImage
-              image={project.frontmatter.thumb.childImageSharp.gatsbyImageData}
-              alt=""
-            />
+            <ImageContainer>
+              <GatsbyImage
+                image={
+                  project.frontmatter.thumb.childImageSharp.gatsbyImageData
+                }
+                alt=""
+              />
+            </ImageContainer>
           </Link>
           <div className="project-content">
             <div className="project-label">

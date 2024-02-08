@@ -11,12 +11,15 @@ import { Title } from "../components/typography/title"
 import Featured from "../components/featured"
 import { LinkButton } from "../components/button"
 import IconRightArrow from "../components/icons/rightarrow"
+import Contact from "../contact"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const contact = data.site.siteMetadata?.contact
 
   console.log(data)
+  console.log(posts)
 
   if (posts.length === 0) {
     return (
@@ -87,6 +90,7 @@ const BlogIndex = ({ data, location }) => {
           </LinkButton>
         </Heading>
       </Featured>
+      <Contact id="#contact" contact={contact} />
     </BlogLayout>
   )
 }
@@ -105,6 +109,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        contact
       }
     }
     allMarkdownRemark(

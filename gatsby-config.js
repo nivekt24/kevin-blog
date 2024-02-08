@@ -14,6 +14,7 @@ module.exports = {
       name: `Kevin Tran`,
       summary: `who lives and works in Southern California, building useful things for the web as a front-end developer`,
     },
+    contact: `kevinntrann@gmail.com`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
@@ -21,10 +22,6 @@ module.exports = {
       twitter: `ktrandev`,
     },
     menuLinks: [
-      {
-        name: "Home",
-        link: "/",
-      },
       {
         name: "Posts",
         link: "/posts",
@@ -35,10 +32,13 @@ module.exports = {
       },
       {
         name: "About",
-        link: "/about",
+        link: "#about",
+      },
+      {
+        name: "Contact",
+        link: "#contact",
       },
     ],
-    contact: `kevinntrann@gmail.com`,
   },
   plugins: [
     `gatsby-plugin-image`,

@@ -17,7 +17,7 @@ const CardWrapper = styled.div`
   }
 `
 
-function Card({ children }) {
+const Card = ({ children }) => {
   return <CardWrapper>{children}</CardWrapper>
 }
 

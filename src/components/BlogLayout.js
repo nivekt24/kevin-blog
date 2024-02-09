@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { ThemeProvider } from "styled-components"
 // Components
 import Header from "./header"
-import Footer from "../components/footer"
+import Footer from "./footer"
 // Context
 import { ModeContext } from "./context/ModeProvider"
 // Styles

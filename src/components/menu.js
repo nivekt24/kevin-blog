@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, useRef } from "react"
 import { Link } from "gatsby"
-import { ModeContext } from "../context/ModeProvider"
-import useOnClickOutside from "../hooks/useOnClickOutside"
-import ModeButton from "../ModeButton"
+import { ModeContext } from "./context/ModeProvider"
+import useOnClickOutside from "./hooks/useOnClickOutside"
+import ModeButton from "./modebutton"
 
 // Styles
 import styled from "styled-components"

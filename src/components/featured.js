@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Icon from "../icons/Icon"
+import Icon from "./icons/Icon"
 
 import styled from "styled-components"
 
@@ -20,7 +20,7 @@ const ProjectItem = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  background: ${props => props.theme.colors.cardBackground};
+  /* background: ${props => props.theme.colors.cardBackground}; */
   border-radius: 24px;
   justify-content: space-between;
   align-items: center;
@@ -50,11 +50,6 @@ const ProjectItem = styled.div`
     & p {
       margin-top: 16px;
     }
-  }
-
-  h3,
-  p {
-    background: ${props => props.theme.colors.cardBackground};
   }
 
   h3 {
@@ -116,7 +111,7 @@ const ImageContainer = styled.div`
   }
 `
 
-export default function Featured({ children }) {
+const Featured = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       featured: allMarkdownRemark(
@@ -140,11 +135,11 @@ export default function Featured({ children }) {
       }
     }
   `)
-  console.log(data)
+  // console.log(data)
   const featuredProjects = data.featured.nodes
 
   return (
-    <ProjectWrapper>
+    <ProjectWrapper id="projects">
       {children}
       {featuredProjects?.map(project => (
         <ProjectItem key={project.id}>
@@ -202,3 +197,5 @@ export default function Featured({ children }) {
     </ProjectWrapper>
   )
 }
+
+export default Featured

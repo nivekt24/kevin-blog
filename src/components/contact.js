@@ -11,7 +11,7 @@ const ContactWrapper = styled.section`
   }
 
   .title {
-    font-size: clamp(30px, 8vw, 60px);
+    font-size: clamp(30px, 5vw, 60px);
   }
 
   .email-link {

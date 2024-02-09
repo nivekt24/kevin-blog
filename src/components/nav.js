@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 // Components
-import ModeButton from "../ModeButton"
-import Menu from "../menu"
+import ModeButton from "./modebutton"
+import Menu from "./menu"
 
 // Context
-import { ModeContext } from "../context/ModeProvider"
+import { ModeContext } from "./context/ModeProvider"
 // Styles
 import styled from "styled-components"
 

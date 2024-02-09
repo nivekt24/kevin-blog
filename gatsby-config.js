@@ -23,20 +23,21 @@ module.exports = {
     },
     menuLinks: [
       {
+        name: "About",
+        link: "/#about",
+      },
+      {
         name: "Posts",
-        link: "/posts",
+        link: "/#posts",
       },
       {
         name: "Projects",
-        link: "/projects",
+        link: "/#projects",
       },
-      {
-        name: "About",
-        link: "#about",
-      },
+
       {
         name: "Contact",
-        link: "#contact",
+        link: "/#contact",
       },
     ],
   },

@@ -1,6 +1,6 @@
 import React from "react"
 // components
-import Social from "../social"
+import Social from "./social"
 // styles
 import styled from "styled-components"
 

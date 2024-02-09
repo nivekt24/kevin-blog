@@ -1,6 +1,6 @@
 import React from "react"
 
-function index() {
+const Footer = () => {
   return (
     <footer className="text-align">
       © {new Date().getFullYear()}, Built with
@@ -10,4 +10,4 @@ function index() {
   )
 }
 
-export default index
+export default Footer

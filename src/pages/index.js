@@ -8,18 +8,19 @@ import BlogLayout from "../components/BlogLayout"
 import Seo from "../components/seo"
 import { Heading } from "../components/typography/heading"
 import { Title } from "../components/typography/title"
-import Featured from "../components/featured"
 import { LinkButton } from "../components/button"
 import IconRightArrow from "../components/icons/rightarrow"
-import Contact from "../contact"
+import BlogPosts from "../components/posts"
+import Featured from "../components/featured"
+import Contact from "../components/contact"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const contact = data.site.siteMetadata?.contact
 
-  console.log(data)
-  console.log(posts)
+  // console.log(data)
+  // console.log(posts)
 
   if (posts.length === 0) {
     return (
@@ -37,7 +38,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <BlogLayout location={location} title={siteTitle}>
       <Hero />
-      <ol style={{ listStyle: `none` }}>
+      <BlogPosts posts={posts}>
         <Heading>
           <Title>Latest Posts</Title>
           <LinkButton>
@@ -47,38 +48,7 @@ const BlogIndex = ({ data, location }) => {
             </Link>
           </LinkButton>
         </Heading>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <section>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <header>
-                      <h3>
-                        <span itemProp="headline">{title}</span>
-                      </h3>
-                      {/* <small>{post.frontmatter.date}</small> */}
-                    </header>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
-                    <span style={{ fontWeight: "bold" }}>Read more</span>
-                  </Link>
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+      </BlogPosts>
       <Featured>
         <Heading>
           <Title>Featured Projects</Title>

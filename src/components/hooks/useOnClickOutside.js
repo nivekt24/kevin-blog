@@ -1,24 +1,19 @@
 import { useEffect } from "react"
 
-// https://usehooks-ts.com/react-hook/use-on-click-outside
-
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
-    const listener = event => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return
+    const handleClickOutside = event => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        handler(event)
       }
-
-      handler(event)
     }
 
-    document.addEventListener("mousedown", listener)
-    document.addEventListener("touchstart", listener)
+    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("touchstart", handleClickOutside)
 
-    // need to remove Event Listen as component unmounts
     return () => {
-      document.removeEventListener("mousedown", listener)
-      document.removeEventListener("touchstart", listener)
+      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("touchstart", handleClickOutside)
     }
   }, [ref, handler])
 }

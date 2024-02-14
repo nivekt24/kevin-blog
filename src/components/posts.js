@@ -1,9 +1,30 @@
-import { Link } from "gatsby"
 import React from "react"
-
+import { Link } from "gatsby"
+import IconRightArrow from "./icons/rightarrow"
 import styled from "styled-components"
 
 const BlogPostWrapper = styled.ol``
+
+export const StyledLink = styled(Link)`
+  position: relative;
+
+  .right-arrow {
+    position: absolute;
+    margin-left: 10px;
+    top: 94%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Added transition for smoother hover effect */
+  }
+
+  .right-arrow path {
+    fill: #435acb;
+  }
+
+  &:hover .right-arrow {
+    opacity: 1;
+  }
+`
 
 const BlogPosts = ({ posts, children }) => {
   return (
@@ -20,7 +41,7 @@ const BlogPosts = ({ posts, children }) => {
               itemType="http://schema.org/Article"
             >
               <section>
-                <Link to={post.fields.slug} itemProp="url">
+                <StyledLink to={post.fields.slug} itemProp="url">
                   <header>
                     <h3>
                       <span itemProp="headline">{title}</span>
@@ -34,7 +55,8 @@ const BlogPosts = ({ posts, children }) => {
                     itemProp="description"
                   />
                   <span style={{ fontWeight: "bold" }}>Read more</span>
-                </Link>
+                  <IconRightArrow />
+                </StyledLink>
               </section>
             </article>
           </li>

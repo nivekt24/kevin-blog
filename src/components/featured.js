@@ -53,9 +53,8 @@ const ProjectItem = styled.div`
   }
 
   h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: clamp(24px, 4vw, 28px);
+    margin: 0;
+    font-size: clamp(22px, 4vw, 28px);
     font-weight: 700;
     line-height: 1.06667;
   }

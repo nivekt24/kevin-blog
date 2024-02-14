@@ -1,7 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../../components/Layout/index"
 import Card from "../../components/card"
+import IconRightArrow from "../../components/icons/rightarrow"
+import { StyledLink } from "../../components/posts"
 import styled from "styled-components"
 
 const CardGridStyle = styled.div`
@@ -50,7 +52,7 @@ export default function Posts() {
           <Card key={post.fields.slug}>
             <article className="post-list-item">
               <section>
-                <Link to={post.fields.slug} itemProp="url">
+                <StyledLink to={post.fields.slug} itemProp="url">
                   <header>
                     <h3>
                       <span itemProp="headline">{post.frontmatter.title}</span>
@@ -64,7 +66,8 @@ export default function Posts() {
                     itemProp="description"
                   />
                   <span style={{ fontWeight: "bold" }}>Read more</span>
-                </Link>
+                  <IconRightArrow />
+                </StyledLink>
               </section>
             </article>
           </Card>

@@ -6,8 +6,8 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Extra-large:-Desktops---12-col" transform="translate(-1233.000000, -53.000000)">
             <g id="Group" transform="translate(1233.000000, 53.000000)">
-                <circle id="Oval-Copy-2" fill="#D1E1E9" cx="21" cy="21" r="21"></circle>
-                <g id="sun" transform="translate(10.000000, 10.000000)" stroke="#215973" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <circle id="Oval-Copy-2" fill="" cx="21" cy="21" r="21"></circle>
+                <g id="sun" transform="translate(10.000000, 10.000000)" stroke="hsl(0deg, 0%, 100%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                     <circle id="Oval" cx="11" cy="11" r="5"></circle>
                     <line x1="11" y1="0" x2="11" y2="2" id="Path"></line>
                     <line x1="11" y1="20" x2="11" y2="22" id="Path"></line>

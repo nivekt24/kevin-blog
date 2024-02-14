@@ -16,7 +16,6 @@ const NavList = styled.ul`
   padding: 0;
   margin: 0;
   font-family: "DM Mono", monospace;
-  /* font-family: "Muli Regular", Arial, Helvetica, sans-serif; */
   font-size: 1rem;
 
   h1 {
@@ -38,12 +37,13 @@ const NavList = styled.ul`
       font-weight: 800;
     }
 
-    :last-child {
+    &:last-child {
+      opacity: 0.7;
       margin-right: 0;
     }
 
-    :hover {
-      opacity: 0.7;
+    &:last-child:hover {
+      opacity: 1;
     }
 
     @media screen and (max-width: 768px) {

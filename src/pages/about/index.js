@@ -5,7 +5,7 @@ import Layout from "../../components/Layout"
 function About() {
   return (
     <Layout>
-      <h1>About</h1>
+      <h1>About me</h1>
       <p>
         Hi! I'm Kevin Tran, a self-taught web developer born and raised in
         Orange County, California. I graduated from California State University,

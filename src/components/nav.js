@@ -29,9 +29,15 @@ const NavList = styled.ul`
 
   li {
     display: inline-block;
-    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
     transition: opacity 0.5s ease;
     cursor: pointer;
+
+    &:not(:last-child) {
+      padding: 8px 12px;
+      border: 1px solid ${props => props.theme.colors.textDark};
+    }
 
     .active {
       font-weight: 800;

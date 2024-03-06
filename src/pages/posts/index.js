@@ -12,6 +12,10 @@ const CardGridStyle = styled.div`
   gap: 32px;
   padding-top: 32px;
 
+  h3 span {
+    font-size: var(--fontSize-3);
+  }
+
   @media (min-width: 1150px) {
     margin-left: -32px;
     margin-right: -32px;

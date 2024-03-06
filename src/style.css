@@ -195,7 +195,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--fontWeight-bold);
+  /* font-weight: var(--fontWeight-bold); */
   /* color: var(--color-primary); */
 }
 
@@ -327,6 +327,7 @@ img {
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: 1024px;
+  /* max-width: var(--maxWidth-3xl); */
   /* max-width: var(--maxWidth-wrapper); */
   padding: var(--spacing-10) var(--spacing-5);
 }
@@ -349,22 +350,34 @@ img {
   margin-top: var(--spacing-8);
 }
 
-section:hover h3 {
+/* section:hover h3 {
   color: var(--color-primary);
-}
+} */
 
-.post-list-item p {
-  /* margin-bottom: var(--spacing-0); */
-}
+/* .post-list-item p {
+   margin-bottom: var(--spacing-0); 
+} */
 
 .post-list-item h3 {
-  font-size: var(--fontSize-3);
-  margin-bottom: var(--spacing-2);
+  font-size: var(--fontSize-1);
+  margin-bottom: var(--spacing-0);
   margin-top: var(--spacing-0);
+}
+
+.post-list-item:hover h3 {
+  color: var(--color-primary);
+  /* text-decoration: underline; */
 }
 
 .post-list-item header {
   margin-bottom: var(--spacing-4);
+  background: transparent;
+  /* border-bottom: 1px solid #000; */
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  text-decoration: none;
 }
 
 .header-link-home {

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import IconRightArrow from "./icons/rightarrow"
 import styled from "styled-components"
 
 const BlogPostWrapper = styled.ol``
@@ -46,16 +45,16 @@ const BlogPosts = ({ posts, children }) => {
                     <h3>
                       <span itemProp="headline">{title}</span>
                     </h3>
-                    {/* <small>{post.frontmatter.date}</small> */}
+                    <small>{post.frontmatter.date}</small>
                   </header>
-                  <p
+                  {/* <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
                     itemProp="description"
-                  />
-                  <span style={{ fontWeight: "bold" }}>Read more</span>
-                  <IconRightArrow />
+                  /> */}
+                  {/* <span style={{ fontWeight: "bold" }}>Read more</span>
+                  <IconRightArrow /> */}
                 </StyledLink>
               </section>
             </article>
